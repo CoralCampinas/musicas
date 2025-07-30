@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;500;600;700&display=swap');
+        
+        .font-cinzel {
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .font-garamond {
+            font-family: 'Times New Roman', serif;
+        }
+        
+.lyrics-container {
+    font-size: 18px; /* Isso pode estar travando o tamanho */
+}
+        body {
+            font-size: 16px;
+        }
+                pre {
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+                Titulo {
+            font-size: 22px;
+            font-family: Times New Roman;
+            color: #000000;
+            font-weight: bold;
+        }
+        .audio-player {
+            transition: all 0.3s ease;
+        }
+        
+        .audio-player:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .voice-part-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: white !important;
+            }
+            .lyrics-container {
+                background-color: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-amber-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="font-cinzel text-4xl md:text-5xl font-bold text-amber-900 mb-2">À Santíssima Trindade</h1>
+            <p class="font-garamond text-lg text-amber-800 italic">Canto de Entrada</p>
+        </header>
+        
+        <!-- Controls -->
+        <div class="flex flex-wrap justify-center gap-2 md:space-x-4 mb-8 no-print">
+
+            <button onclick="increaseFontSize()" class="bg-amber-800 hover:bg-amber-700 text-white font-garamond px-4 py-2 rounded-lg flex items-center transition-colors text-sm sm:text-base w-full sm:w-auto">
+                <i class="fas fa-search-plus mr-2"></i> Aumentar Fonte
+            </button>
+            <button onclick="decreaseFontSize()" class="bg-amber-800 hover:bg-amber-700 text-white font-garamond px-4 py-2 rounded-lg flex items-center transition-colors text-sm sm:text-base w-full sm:w-auto"
+>
+                <i class="fas fa-search-minus mr-2"></i> Diminuir Fonte
+            </button>
+            <button onclick="printContent()" class="bg-amber-800 hover:bg-amber-700 text-white font-garamond px-4 py-2 rounded-lg flex items-center transition-colors text-sm sm:text-base w-full sm:w-auto">
+                <i class="fas fa-print mr-2"></i> Imprimir
+            </button>
+        </div>
+        
+        <!-- Lyrics -->
+        <div id="printable-content">
+            <div class="lyrics-container bg-white bg-opacity-80 p-6 rounded-lg shadow-md mb-8 font-garamond text-lg leading-relaxed text-black">
+
+                <div class="text-center mb-6">
+<div class="font-garamond text-lg text-black whitespace-pre-wrap">
+
+    1. Deus Eterno, a vós louvor,   
+    Glória à vossa Majestade,   
+    Anjos e homens com fervor,  
+    Vos adoram Deus Trindade.   
+<strong>    Cante a terra com amor:     
+    Santo, Santo é o Senhor! (2x)   </strong>
+        
+    2. Pai Eterno, a Criação    
+    Que tirastes vós do nada,  
+    Repousando em vossa mão 
+    Um acorde imenso brada: 
+<strong>    Quem me fez foi Vosso Amor,     
+    Glória a Vós Pai Criador! (2x)  </strong>
+        
+    3. Filho Eterno, nosso irmão,   
+    Vossa morte deu-nos vida,   
+    Vosso sangue salvação!  
+    Toda Igreja agradecida: 
+<strong>    Louva e exalta a Vós, Jesus,    
+    Glória cante a vossa Cruz! (2x) </strong>
+        
+    4. Deus Espírito, Sol de amor,  
+    Procedeis do Pai, do Filho. 
+    Vossos dons sempre mandais,   
+    A nós pobres que cantamos 
+<strong>    Santo, Santo é o Senhor,    
+    Uno e Trino, Deus de Amor! (2x) </strong>
+
+
+</pre>
+     
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Audio Players -->
+        <div class="space-y-4 no-print">
+            <h3 class="font-cinzel text-2xl text-amber-900 mb-4 text-center">Versões vocais</h3>
+            
+            <!-- Complete Version -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-amber-600">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-amber-600 text-white">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Versão Completa</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="https://www.appsheet.com/template/gettablefileurl?appName=LinkFoto-727496278&tableName=Mp3&fileName=Mp3_Files_%2F%C3%80%20Sant%C3%ADssima%20Trindade.Mp3%20Completo.162612.mp3&appVersion=1.000042&signature=1c965115c1b38952804db9e39bd276147cbb74575743bd860562f5808840df732f3867a7b4fa1f52d6ff6521aed1f21a#t=0.1" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Soprano -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-purple-400">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-purple-400 text-white">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Soprano</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="SEMAUDIO" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Contralto -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-blue-400">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-blue-400 text-white">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Contralto</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="SEMAUDIO" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Tenor -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-green-500">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-green-500 text-white">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Tenor</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="SEMAUDIO" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Baixo -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-red-500">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-red-500 text-white">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Baixo</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="SEMAUDIO" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuração inicial do tamanho da fonte
+// Configuração inicial do tamanho da fonte
+let currentFontSize = 18; // Tamanho inicial em pixels
+
+function updateFontSize() {
+    const elements = document.querySelectorAll('.lyrics-container, .lyrics-container *'); // Seleciona todos os elementos dentro do container
+    elements.forEach(el => {
+        el.style.fontSize = `${currentFontSize}px`;
+    });
+    console.log(`Tamanho da fonte atualizado para: ${currentFontSize}px`);
+}
+
+function increaseFontSize() {
+    if (currentFontSize < 32) { // Define um limite maior, se necessário
+        currentFontSize += 2;
+        updateFontSize();
+    }
+}
+
+function decreaseFontSize() {
+    if (currentFontSize > 12) { // Define um limite menor, se necessário
+        currentFontSize -= 2;
+        updateFontSize();
+    }
+}
+
+// Inicializa o tamanho da fonte quando a página carrega
+document.addEventListener('DOMContentLoaded', updateFontSize);
+
+
+function printContent() {
+    window.print();
+}
+
+// Inicializa o tamanho da fonte
+document.addEventListener('DOMContentLoaded', updateFontSize);
+
+        
+        // Inicializa o tamanho da fonte
+        updateFontSize();
+        
+        // Add visual feedback when audio is playing
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('play', function() {
+                this.closest('.audio-player').classList.add('ring-2', 'ring-amber-400');
+            });
+            
+            audio.addEventListener('pause', function() {
+                this.closest('.audio-player').classList.remove('ring-2', 'ring-amber-400');
+            });
+        });
+    </script>
+</body>
+</html>,
