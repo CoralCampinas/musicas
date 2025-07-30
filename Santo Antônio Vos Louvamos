@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;500;600;700&display=swap');
+        
+        .font-cinzel {
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .font-garamond {
+            font-family: 'Times New Roman', serif;
+        }
+        
+.lyrics-container {
+    font-size: 18px; /* Isso pode estar travando o tamanho */
+}
+        body {
+            font-size: 16px;
+        }
+                pre {
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+                Titulo {
+            font-size: 22px;
+            font-family: Times New Roman;
+            color: #000000;
+            font-weight: bold;
+        }
+        .audio-player {
+            transition: all 0.3s ease;
+        }
+        
+        .audio-player:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .voice-part-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: white !important;
+            }
+            .lyrics-container {
+                background-color: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-amber-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="font-cinzel text-4xl md:text-5xl font-bold text-amber-900 mb-2">Santo Antônio Vos Louvamos </h1>
+            <p class="font-garamond text-lg text-amber-800 italic">Canto de Entrada</p>
+        </header>
+        
+        <!-- Controls -->
+        <div class="flex flex-wrap justify-center gap-2 md:space-x-4 mb-8 no-print">
+
+            <button onclick="increaseFontSize()" class="bg-amber-800 hover:bg-amber-700 text-white font-garamond px-4 py-2 rounded-lg flex items-center transition-colors text-sm sm:text-base w-full sm:w-auto">
+                <i class="fas fa-search-plus mr-2"></i> Aumentar Fonte
+            </button>
+            <button onclick="decreaseFontSize()" class="bg-amber-800 hover:bg-amber-700 text-white font-garamond px-4 py-2 rounded-lg flex items-center transition-colors text-sm sm:text-base w-full sm:w-auto"
+>
+                <i class="fas fa-search-minus mr-2"></i> Diminuir Fonte
+            </button>
+            <button onclick="printContent()" class="bg-amber-800 hover:bg-amber-700 text-white font-garamond px-4 py-2 rounded-lg flex items-center transition-colors text-sm sm:text-base w-full sm:w-auto">
+                <i class="fas fa-print mr-2"></i> Imprimir
+            </button>
+        </div>
+        
+        <!-- Lyrics -->
+        <div id="printable-content">
+            <div class="lyrics-container bg-white bg-opacity-80 p-6 rounded-lg shadow-md mb-8 font-garamond text-lg leading-relaxed text-black">
+
+                <div class="text-center mb-6">
+<div class="font-garamond text-lg text-black whitespace-pre-wrap">
+
+    1- Santo Antônio vos louvamos   
+    Com carinho e com amor  
+    Vossas obras exaltamos  
+    Grande mestre pregador  
+        
+    <strong>Refrão: Santo Antônio do amor da partilha   
+    Do Evangelho, da fé e do bem    
+    Conduzi nossa humana família    
+    Ao terceiro milênio que vem </strong>
+        
+    2-      Santo Antônio que nos braços    
+    Conduzistes Deus menino 
+    Dai vigor aos nossos passos 
+    No caminho ao Pai Divino    
+        
+    3-     Grande Santo Franciscano 
+    Pelo povo tão amado 
+    Vosso amor ao ser humano    
+    Foi por Deus glorificado    
+        
+    4-     Dos que perdem ou procuram   
+    Sois o Santo protetor   
+    Vossas graças sempre curam  
+    Os que sofrem por amor  
+
+
+</pre>
+     
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Audio Players -->
+        <div class="space-y-4 no-print">
+            <h3 class="font-cinzel text-2xl text-amber-900 mb-4 text-center">Versões vocais</h3>
+            
+            <!-- Complete Version -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-amber-600">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-amber-600 text-white">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Versão Completa</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="https://www.appsheet.com/template/gettablefileurl?appName=LinkFoto-727496278&tableName=Mp3&fileName=Mp3_Files_%2FSanto%20Ant%C3%B4nio%20Vos%20Louvamos.Mp3%20Completo.131857.mp3&appVersion=1.000042&signature=f8d2168312125ff2bc723015f7da00c5d4621f75df215701e5eaeb6b77fd0dfd757cd33001e3abcfa597f06101216336#t=0.1" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Soprano -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-purple-400">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-purple-400 text-white">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Soprano</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="SEMAUDIO" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Contralto -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-blue-400">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-blue-400 text-white">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Contralto</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="https://www.appsheet.com/template/gettablefileurl?appName=AppRepertório-756474707&tableName=Musicas&fileName=Musicas_Files_%2FSanto%20Antônio%2C%20vos%20louvamos.Segunda%20Voz.185420.mp3&appVersion=1.000041&signature=2f79e00b038a661651217d32fb64ff1929639ab9111dd1faebd311ad88ca0e6472285d7719f28eed828ae8edf8b4e82f#t=0.1" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Tenor -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-green-500">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-green-500 text-white">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Tenor</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="SEMAUDIO" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+            
+            <!-- Baixo -->
+            <div class="audio-player bg-white p-4 rounded-xl shadow-md border-l-4 border-red-500">
+                <div class="flex items-center mb-2">
+                    <div class="voice-part-icon bg-red-500 text-white">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <h4 class="font-garamond font-bold text-xl text-amber-900">Baixo</h4>
+                </div>
+                <audio controls class="w-full rounded-lg">
+                    <source src="https://www.appsheet.com/template/gettablefileurl?appName=AppRepertório-756474707&tableName=Musicas&fileName=Musicas_Files_%2FSanto%20Antônio%2C%20vos%20louvamos.Baixo.185420.mp3&appVersion=1.000041&signature=ee1153b79ad1be9950d58c5b2f362fd38cc0cad2c6b5d6c7cad53ee61baa9edc7d2b0412ac3bb9171ba369a913d9cea6#t=0.1" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuração inicial do tamanho da fonte
+// Configuração inicial do tamanho da fonte
+let currentFontSize = 18; // Tamanho inicial em pixels
+
+function updateFontSize() {
+    const elements = document.querySelectorAll('.lyrics-container, .lyrics-container *'); // Seleciona todos os elementos dentro do container
+    elements.forEach(el => {
+        el.style.fontSize = `${currentFontSize}px`;
+    });
+    console.log(`Tamanho da fonte atualizado para: ${currentFontSize}px`);
+}
+
+function increaseFontSize() {
+    if (currentFontSize < 32) { // Define um limite maior, se necessário
+        currentFontSize += 2;
+        updateFontSize();
+    }
+}
+
+function decreaseFontSize() {
+    if (currentFontSize > 12) { // Define um limite menor, se necessário
+        currentFontSize -= 2;
+        updateFontSize();
+    }
+}
+
+// Inicializa o tamanho da fonte quando a página carrega
+document.addEventListener('DOMContentLoaded', updateFontSize);
+
+
+function printContent() {
+    window.print();
+}
+
+// Inicializa o tamanho da fonte
+document.addEventListener('DOMContentLoaded', updateFontSize);
+
+        
+        // Inicializa o tamanho da fonte
+        updateFontSize();
+        
+        // Add visual feedback when audio is playing
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('play', function() {
+                this.closest('.audio-player').classList.add('ring-2', 'ring-amber-400');
+            });
+            
+            audio.addEventListener('pause', function() {
+                this.closest('.audio-player').classList.remove('ring-2', 'ring-amber-400');
+            });
+        });
+    </script>
+</body>
+</html>
